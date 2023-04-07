@@ -6,17 +6,24 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.foundation.shape.CornerSize
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.mubarak.basic_compose_demo_using_dagger_hilt.ui.theme.Basic_compose_demo_using_dagger_hiltTheme
 import com.mubarak.basic_compose_demo_using_dagger_hilt.utils.ApiState
 import com.mubarak.basic_compose_demo_using_dagger_hilt.utils.ShowLoader
@@ -95,5 +102,21 @@ fun GetAPIResponse(postViewModel: PostViewModel) {
 @Composable
 fun EachRowItem(post: Post) {
 
-    Text(text = post.body)
+    Card(
+        modifier = Modifier.padding(horizontal = 10.dp, vertical = 10.dp),
+        shape = RoundedCornerShape(corner = CornerSize(10.dp)),
+        backgroundColor = Color.White,
+        elevation = 2.dp,
+    ) {
+
+        Column(
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth()
+
+        ) {
+            Text(text = post.body)
+        }
+
+    }
 }
