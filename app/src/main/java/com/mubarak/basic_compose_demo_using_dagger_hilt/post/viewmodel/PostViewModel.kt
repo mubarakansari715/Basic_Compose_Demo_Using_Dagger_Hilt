@@ -17,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class PostViewModel @Inject constructor(private val repository: PostRepository) : ViewModel() {
 
-    val postResponse: MutableState<ApiState<Post>> = mutableStateOf(ApiState.Empty)
+    val postResponse: MutableState<ApiState<List<Post>>> = mutableStateOf(ApiState.Empty)
 
     init {
         getPostDataResponse()

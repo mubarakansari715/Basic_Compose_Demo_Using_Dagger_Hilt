@@ -80,7 +80,7 @@ fun GetAPIResponse(postViewModel: PostViewModel) {
             ShowLoader(isLoading = false)
         }
 
-        is ApiState.Success<Post> -> {
+        is ApiState.Success<List<Post>> -> {
             ShowLoader(isLoading = false)
             Log.e("@@@TAG", "GetAPIResponse: ${getData.data}")
             LazyColumn {
