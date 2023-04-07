@@ -1,8 +1,7 @@
-package com.mubarak.basic_compose_demo_using_dagger_hilt
+package com.mubarak.basic_compose_demo_using_dagger_hilt.post.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -21,14 +20,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.mubarak.basic_compose_demo_using_dagger_hilt.post.model.Post
 import com.mubarak.basic_compose_demo_using_dagger_hilt.ui.theme.Basic_compose_demo_using_dagger_hiltTheme
 import com.mubarak.basic_compose_demo_using_dagger_hilt.utils.ApiState
 import com.mubarak.basic_compose_demo_using_dagger_hilt.utils.ShowLoader
 import com.mubarak.basic_compose_demo_using_dagger_hilt.utils.ShowToast
-import com.mubarak.basic_compose_demo_using_dagger_hilt.viewmodel.PostViewModel
+import com.mubarak.basic_compose_demo_using_dagger_hilt.post.viewmodel.PostViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
