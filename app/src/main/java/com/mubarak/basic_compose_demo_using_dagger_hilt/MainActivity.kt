@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import com.mubarak.basic_compose_demo_using_dagger_hilt.ui.theme.Basic_compose_demo_using_dagger_hiltTheme
 import com.mubarak.basic_compose_demo_using_dagger_hilt.utils.ApiState
 import com.mubarak.basic_compose_demo_using_dagger_hilt.utils.ShowLoader
+import com.mubarak.basic_compose_demo_using_dagger_hilt.utils.ShowToast
 import com.mubarak.basic_compose_demo_using_dagger_hilt.viewmodel.PostViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -66,12 +67,6 @@ fun DefaultPreview() {
 }
 
 @Composable
-fun showToast(msg: String) {
-    val context = LocalContext.current
-    Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
-}
-
-@Composable
 fun GetAPIResponse(postViewModel: PostViewModel) {
 
     when (val getData = postViewModel.postResponse.value) {
@@ -79,7 +74,7 @@ fun GetAPIResponse(postViewModel: PostViewModel) {
             ShowLoader(isLoading = true)
         }
         is ApiState.Failure -> {
-            showToast(getData.msg.toString())
+            ShowToast(getData.msg.toString())
             ShowLoader(isLoading = false)
         }
         is ApiState.Empty -> {
